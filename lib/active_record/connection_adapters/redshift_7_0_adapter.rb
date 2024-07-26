@@ -223,7 +223,7 @@ module ActiveRecord
         clear_cache!
         reset_transaction
         @connection.query 'ROLLBACK' unless @connection.transaction_status == ::PG::PQTRANS_IDLE
-        @connection.query 'DISCARD ALL'
+        @connection.query 'DISCARD'
         # @connection.query 'RESET ALL'
         # @connection.query 'DEALLOCATE ALL'
         # @connection.query 'CLOSE ALL'
